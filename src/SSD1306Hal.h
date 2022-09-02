@@ -126,7 +126,7 @@ class SSD1306Wire : public OLEDDisplay {
             if (k == 16)  {
               HAL_StatusTypeDef ret = HAL_I2C_Master_Transmit(hi2c, _address, data, k + 1, 100);
               if (ret != HAL_OK) {
-                asm("bkpt");
+//                asm("bkpt");
               }
               k = 0;
             }
@@ -137,7 +137,7 @@ class SSD1306Wire : public OLEDDisplay {
         if (k != 0) {
           HAL_StatusTypeDef ret = HAL_I2C_Master_Transmit(hi2c, _address, data, k + 1, 100);
           if (ret != HAL_OK) {
-            asm("bkpt");
+//            asm("bkpt");
           }
         }
       #else
@@ -175,7 +175,7 @@ class SSD1306Wire : public OLEDDisplay {
       data[1] = command;
       HAL_StatusTypeDef ret = HAL_I2C_Master_Transmit(hi2c, _address, data, 2, 100);
       if (ret != HAL_OK) {
-        asm("bkpt");
+//        asm("bkpt");
       }
     }
 
