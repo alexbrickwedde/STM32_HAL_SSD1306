@@ -104,7 +104,10 @@ class SSD1306Wire : public OLEDDisplay {
         // we can savely assume that buffer_back[pos] == buffer[pos]
         // holdes true for all values of pos
 
-        if (minBoundY == UINT8_MAX) return;
+        if (minBoundY == UINT8_MAX)
+        {
+          return;
+        }
 
         sendCommand(COLUMNADDR);
         sendCommand(x_offset + minBoundX);
